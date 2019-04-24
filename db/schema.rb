@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 2019_04_22_190716) do
     t.string "body", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "questions_id"
-    t.index ["questions_id"], name: "index_answers_on_questions_id"
+    t.bigint "question_id"
+    t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 2019_04_22_190716) do
     t.string "body", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "tests_id"
-    t.index ["tests_id"], name: "index_questions_on_tests_id"
+    t.bigint "test_id"
+    t.index ["test_id"], name: "index_questions_on_test_id"
   end
 
   create_table "tests", force: :cascade do |t|
@@ -43,8 +43,8 @@ ActiveRecord::Schema.define(version: 2019_04_22_190716) do
     t.integer "level", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "categories_id"
-    t.index ["categories_id"], name: "index_tests_on_categories_id"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_tests_on_category_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 2019_04_22_190716) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "answers", "questions", column: "questions_id"
-  add_foreign_key "questions", "tests", column: "tests_id"
-  add_foreign_key "tests", "categories", column: "categories_id"
+  add_foreign_key "answers", "questions", column: "question_id"
+  add_foreign_key "questions", "tests", column: "test_id"
+  add_foreign_key "tests", "categories", column: "category_id"
 end
