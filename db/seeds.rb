@@ -26,13 +26,12 @@ tests = Test.create([
   { title: 'All about Rails', level: 1, category_id: categories[1]},
   { title: 'Simplest SQL constructs', level: 0, category_id: categories[2]},
   ])
-
   # Question
 
-  questions = Question.create([
-    { body: 'What keyword defines a method?', tests_id: 0},
-    { body: 'What keyword defines a class?', tests_id: 1},
-    { body: 'Which character produces string concatenation?', tests_id: 0},
-    { body: 'Which keyword removes a table or database?', tests_id: 3},
-    { body: 'In which directory you can set the time zone?', tests_id: 2},
+questions = Question.create([
+  { body: 'What keyword defines a method?', test_id: tests[0]},
+  { body: 'What keyword defines a class?', test_id: tests[1]},
+  { body: 'Which character produces string concatenation?', test_id: tests[0]},
+  { body: 'Which keyword removes a table or database?', test_id: tests[3]},
+  { body: 'In which directory you can set the time zone?', test_id: tests[2]},
   ])
