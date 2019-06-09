@@ -1,4 +1,4 @@
-class CreateForegionKey < ActiveRecord::Migration[5.2]
+class SetKey < ActiveRecord::Migration[5.2]
   def change
     add_reference(:questions, :test, foreign_key: true)
     add_reference(:tests, :category, foreign_key: true)
